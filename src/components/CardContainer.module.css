@@ -1,0 +1,59 @@
+/* CardContainer.module.css */
+
+.card-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card-container {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .card-container.paused {
+    animation-play-state: paused;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .card-container:hover {
+    transform: scale(1.05);
+    z-index: 1;
+  }
+  
+  .card-container:hover .card-image {
+    filter: brightness(0.8); /* Example effect */
+  }
+  
+  .card-image {
+    transition: filter 0.3s ease;
+  }
+  
+  .card-content {
+    flex: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .card-list {
+      justify-content: center;
+    }
+  }
+  
