@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-100 p-4 shadow-lg z-50">
+    <nav className="fixed top-0 left-0 w-full bg-gray-100 p-4 shadow-lg z-10">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/">
