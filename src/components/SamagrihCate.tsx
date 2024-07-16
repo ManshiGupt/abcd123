@@ -1,7 +1,11 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { productApi } from '@/api/pandit-api';
 
+interface images{
+  images: string[],
+}
 const images = [
   '/thaali.jpg',
   '/budha.jpg',
@@ -46,6 +50,22 @@ const ImageSlider = () => {
 };
 
 const SamagrihCat = () => {
+  const[data, setData]= useState<CardProps[]>([]);
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+        const response = await productApi();
+        setData(response.data);
+        console.log(response.data);
+        
+    } catch (error) {
+        console.log("This is not fetching");
+    }
+  }
+  fetchData();
+  
+}, [])
+
   return (
     <div className="container mx-auto p-4">
       <ImageSlider />

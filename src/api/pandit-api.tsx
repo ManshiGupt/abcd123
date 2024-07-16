@@ -51,3 +51,19 @@ export const productApi = async()=>{
         console.error('Error fetching data:', error);
     }
 }
+
+const apiUrl4 = "https://vedic-pandit-server.onrender.com/get-all-poojas";
+
+export const poojaApi = async () => {
+
+    try {
+        
+        const response = await axios.get("https://vedic-pandit-server.onrender.com/get-all-poojas")
+
+        return response.data
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    
+}
