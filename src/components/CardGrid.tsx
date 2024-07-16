@@ -2,8 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { productApi } from '@/api/pandit-api';
+
 
 interface CardProps {
   imageSrc: string;
@@ -17,11 +18,11 @@ interface CardProps {
 const CardGrid: React.FC = () => {
 
 
-//   const router = useRouter();
+  const router = useRouter();
 
-//   const handleAddToCart = (_id: string) => {
-//     router.push(`/Items/product-details/${_id}`);
-//     }
+  const handleAddToCart = (_id: string) => {
+    router.push(`/Items/${_id}`);
+    }
 
 const[data, setData]= useState<CardProps[]>([]);
 useEffect(() => {
@@ -56,7 +57,7 @@ useEffect(() => {
               </div>
             </div>
             <div className="p-4">
-              <button className="w-full bg-blue-500 text-white py-2 rounded" >View </button>
+              <button className="w-full bg-blue-500 text-white py-2 rounded" onClick={() => handleAddToCart(card._id)} >View </button>
             </div>
           </div>
         ))}
@@ -66,4 +67,4 @@ useEffect(() => {
 };
 
 export default CardGrid;
-// onClick={() => handleAddToCart(card._id)}
+// 

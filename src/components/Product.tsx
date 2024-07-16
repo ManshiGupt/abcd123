@@ -38,7 +38,10 @@ const Product = () => {
         <div className="container mx-auto p-4">
             {Items.map((card, index) => (
                 <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center my-8">
+
+
                     <div className="flex justify-center md:justify-end">
+                        
                         <div className="w-full md:max-w-md">
                             <Image
                                 src={card.image}
@@ -50,6 +53,8 @@ const Product = () => {
                             />
                         </div>
                     </div>
+
+
                     <div className="md:space-y-2">
                         <h3 className="text-xl font-semibold">{card.title}</h3>
                         <p className="text-gray-500">{card.date}</p>

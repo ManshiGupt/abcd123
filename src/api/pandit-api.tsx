@@ -58,7 +58,55 @@ export const poojaApi = async () => {
 
     try {
         
-        const response = await axios.get("https://vedic-pandit-server.onrender.com/get-all-poojas")
+        const response = await axios.get(apiUrl4)
+
+        return response.data
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    
+}
+
+const apiUrl5 = "https://vedic-pandit-server.onrender.com/get-all-poojas";
+
+export const poojaIdApi = async () => {
+
+    try {
+        
+        const response = await axios.get(apiUrl5)
+
+        return response.data
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    
+}
+
+const apiUrl6 = "https://vedic-pandit-server.onrender.com/get-all-poojas";
+
+export const blogApi = async () => {
+
+    try {
+        
+        const response = await axios.get(apiUrl6)
+
+        return response.data
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    
+}
+
+const apiUrl7 = "https://vedic-pandit-server.onrender.com/get-quotes";
+
+export const quotesApi = async () => {
+
+    try {
+        
+        const response = await axios.get(apiUrl7)
 
         return response.data
 

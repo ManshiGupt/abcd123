@@ -12,7 +12,7 @@ interface Blog {
   category: string;
 }
 
-const Blog: React.FC = () => {
+const AllBlog: React.FC = () => {
   const [data, setData] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +21,7 @@ const Blog: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await blogApi();
-        setData(response.data.slice(0,3));
+        setData(response.data);
         setLoading(false);
       } catch (error) {
         setError('Failed to fetch data');
@@ -49,12 +49,12 @@ const Blog: React.FC = () => {
             </h3>
           </div>
           <div className='flex items-center mb-12'>
-            <Link href="/Blog" className="flex items-center">
+            {/* <Link href="/Blog" className="flex items-center">
               <h3 className="md:text-2xl font-medium title-font text-gray-900 text-right">View more</h3>
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" id="arrow" className='ml-2'>
                 <path fillRule="evenodd" d="M.366 19.708c.405.39 1.06.39 1.464 0l8.563-8.264a1.95 1.95 0 0 0 0-2.827L1.768.292A1.063 1.063 0 0 0 .314.282a.976.976 0 0 0-.011 1.425l7.894 7.617a.975.975 0 0 1 0 1.414L.366 18.295a.974.974 0 0 0 0 1.413"></path>
               </svg>
-            </Link>
+            </Link> */}
           </div>
         </div>
 
@@ -99,4 +99,4 @@ const Blog: React.FC = () => {
   );
 };
 
-export default Blog;
+export default AllBlog;

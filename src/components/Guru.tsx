@@ -63,7 +63,7 @@ fetchData();
                         <div className="min-w-[300px] bg-white h-[220px] shadow-xl rounded-lg">
                             <a href={card.videoUrl} target="_blank" rel="noopener noreferrer">
                                 <iframe
-                                    src= {'https://www.youtube.com/watch?v=${card.videoUrl}'}
+                                    src= {`https://www.youtube.com/watch?v=${card.videoUrl}`}
                                     width="320"
                                     height="150"
                                     title="guru video"
@@ -73,8 +73,10 @@ fetchData();
                                 />
                             </a>
                             <p className="text-gray-400 text-left tracking-tighter line-clamp-2 text-wrap leading-normal px-4 my-2">
-                                {card.title}
+                                {/* {card.title} */}
+                                <p>{`https://www.youtube.com/watch?v=${card.videoUrl}`}</p>
                             </p>
+                            
                         </div>
                     </div>
                 ))}
