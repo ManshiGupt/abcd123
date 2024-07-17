@@ -50,7 +50,7 @@ const Guru = () => {
         <div className='p-5 sm:px-64 bg-slate-200 py-20 mb-10'>
             <div className='flex justify-between'>
                 <div className='text-gray text-2xl md:text-5xl tracking-tighter font-medium leading-10 py-10'>
-                    Guru Satsang Katha
+                    Guru Satsang Kathaa
                 </div>
                 <div className='py-10'>
                     <Link href="/Blog">View all&gt;</Link>
