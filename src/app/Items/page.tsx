@@ -2,8 +2,9 @@
 import React from 'react';
 import Search from '@/components/Search';
 import CardGrid from '@/components/CardGrid';
-import SamagrihCat from '@/components/SamagrihCate';
+
 import { useRouter } from 'next/navigation';
+import SamagrihCate from '@/components/SamagrihCate';
 
 const Home: React.FC = () => {
   // const router = useRouter();
@@ -18,7 +19,7 @@ const Home: React.FC = () => {
   return (
     <div className="md:pt-40 pt-20">
       <Search />
-      <SamagrihCat />
+      <SamagrihCate />
      <CardGrid/>
       {/* <div onClick={() => handleAddToCart('djlfjrujoi3diofj', 'Pooja Samagri', 'Product Name', 'Product Subtitle')} className="cursor-pointer">
         Good

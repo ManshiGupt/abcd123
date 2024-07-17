@@ -8,7 +8,7 @@ interface SamagrihCat {
   _id: string;
 }
 
-const SamagrihCat: React.FC = () => {
+const SamagrihCate: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [data, setData] = useState<SamagrihCat[]>([]);
 
@@ -37,10 +37,10 @@ const SamagrihCat: React.FC = () => {
     <div className="container mx-auto p-4">
       {data.length > 0 ? (
         <div className="relative w-full overflow-hidden">
-          <div className="flex transition-transform duration-300" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          <div className="shadow-xl flex transition-transform duration-300" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
             {data.map((src, index) => (
               <div key={src._id} className="flex-shrink-0 w-1/2 md:w-1/3 lg:w-1/4 flex flex-col items-center p-0">
-                <img src={src.imageUrl} alt={`Slide ${src.title}`} className="w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/vedic-pandit-108.appspot.com/o/sanskaar.png?alt=media&token=0458e851-e192-46d2-8665-544a495e0866" alt={`Slide ${src.title}`} className="w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover" />
                 <p className="text-center mt-2">{src.title}</p>
               </div>
             ))}
@@ -59,4 +59,4 @@ const SamagrihCat: React.FC = () => {
   );
 };
 
-export default SamagrihCat;
+export default SamagrihCate;

@@ -1,10 +1,10 @@
-// components/DharmikGyanBhandar.tsx
+'use client'
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 interface SearchResult {
-  id: string;
+  _id: string;
   title: string;
 }
 
@@ -67,19 +67,18 @@ const Search: React.FC = () => {
             </svg>
           </button>
         </div>
-        <div className='flex flex-wrap justify-center mt-4'>
+        <div className='md:flex flex-wrap justify-center mt-4 hidden'>
           <span className='text-gray px-4 py-1 m-2'>Popular Search:</span>
-          <span className='bg-white text-gray-700 rounded-full px-4 py-1 m-2 shadow-md'>Phalgun Amavasya</span>
-          <span className='bg-white text-gray-700 rounded-full px-4 py-1 m-2 shadow-md'>Meena Sankranti</span>
-          <span className='bg-white text-gray-700 rounded-full px-4 py-1 m-2 shadow-md'>Janmashtami</span>
+          <span className='bg-white text-gray-700 rounded-full px-4 py-1 m-2 shadow-md'>Maroon Kumkum Paste</span>
+          <span className='bg-white text-gray-700 rounded-full px-4 py-1 m-2 shadow-md'>Dhoop Stick</span>
         </div>
         <div className='w-full max-w-xl mt-4'>
           {isLoading ? (
             <p>Loading...</p>
           ) : (
-            <ul className='bg-white border border-gray-200 rounded-lg shadow-md'>
+            <ul className='bg-white border md:border-gray-200 rounded-lg shadow-md'>
               {results.map((result) => (
-                <li key={result.id} className='px-4 py-2 hover:bg-gray-100 cursor-pointer'>
+                <li key={result._id} className='px-4 py-2 hover:bg-gray-100 cursor-pointer'>
                   {result.title}
                 </li>
               ))}

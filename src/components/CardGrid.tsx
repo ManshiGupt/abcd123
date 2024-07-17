@@ -7,11 +7,13 @@ import { productApi } from '@/api/pandit-api';
 
 
 interface CardProps {
-  imageSrc: string[];
+  images: string[];
   title: string;
-  originalPrice: number;
-  discountedPrice: number;
-  description: string;
+  subtitle: string,
+  oldPrice: string,
+  newPrice: string,
+  productTag: string,
+  discountPercent: string;
   _id:string,
 }
 
@@ -47,8 +49,9 @@ useEffect(() => {
         {data.map((card, index) => (
           <div key={card._id} className="bg-white shadow-md rounded-lg overflow-hidden">
             
-            {Array.isArray(card.imageSrc) && card.imageSrc.length > 0 ? (
-              <Image src={card.imageSrc[0]} alt={card.title} width={500} height={500} className="w-full h-64 object-cover" />
+            {Array.isArray(card.images) && card.images.length > 0 ? (
+              // <Image src={card.images[0]} alt={card.title} width={500} height={500} className="w-full h-64 object-cover" />
+              <img src={card.images[0]} alt={card.title} className="w-full h-64 object-cover" />
             ) : (
               <img src="/path/to/default/image.jpg" alt={card.title} className="w-full h-64 object-cover" />
             )}
@@ -56,11 +59,14 @@ useEffect(() => {
             {/* <img src={card.imageSrc} alt={card.title} className="w-full h-64 object-cover" /> */}
             {/* <img src={src.imageUrl} alt={`Slide ${index}`} className="w-full h-[250px] rounded-lg" /> */}
             <div className="p-4">
-              <h3 className="text-xl font-semibold">{card.title}</h3>
-              <p className="text-gray-500">{card.description}</p>
+              <h3 className="md:text-xl font-semibold">{card.title}</h3>
+              <div className='text-xs'>
+              {/* <p className="text-gray-500 line-clamp-1">{card.productTag}</p> */}
+              <p className="text-gray-500 line-clamp-1">{card.subtitle}</p>
+              </div>
               <div className="mt-4 flex items-center">
-                <span className="text-gray-500 line-through">₹{card.originalPrice}</span>
-                <span className="text-red-500 ml-2">₹{card.discountedPrice}</span>
+                <span className="text-gray-500 line-through">₹{card.oldPrice}</span>
+                <span className="text-red-500 ml-2">₹{card.newPrice}</span>
                 <span className="ml-2 text-green-500">(20% off)</span>
               </div>
             </div>
