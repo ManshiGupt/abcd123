@@ -6,7 +6,7 @@ import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { bhajanApi } from '@/api/pandit-api';
 
-interface GuruItem {
+interface Guru {
     videoUrl: string,
     title: string,
 }
@@ -14,20 +14,20 @@ interface GuruItem {
 
 
 const Guru = () => {
-    const[data, setData]= useState<GuruItem[]>([]);
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await bhajanApi();
-      setData(response.data); 
-      console.log(response.data); 
-    } catch (error) {
-        console.log("This is error in fetching"+ error);
-    }
-  }
-fetchData();
-  
-}, [])
+    const [data, setData] = useState<Guru[]>([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await bhajanApi();
+                setData(response.data);
+                console.log(response.data);
+            } catch (error) {
+                console.log("This is error in fetching" + error);
+            }
+        }
+        fetchData();
+
+    }, [])
 
     const [sliderRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
@@ -58,28 +58,26 @@ fetchData();
             </div>
 
             <div ref={sliderRef} className="keen-slider">
-                {data.map((card, index) => (
-                    <div key={index} className="keen-slider__slide number-slide1">
-                        <div className="min-w-[300px] bg-white h-[220px] shadow-xl rounded-lg">
-                            <a href={card.videoUrl} target="_blank" rel="noopener noreferrer">
-                                <iframe
-                                    src= {`https://www.youtube.com/watch?v=${card.videoUrl}`}
-                                    width="320"
-                                    height="150"
-                                    title="guru video"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                    className='md:w-96 rounded-t-lg'
-                                />
-                            </a>
-                            <p className="text-gray-400 text-left tracking-tighter line-clamp-2 text-wrap leading-normal px-4 my-2">
-                                {/* {card.title} */}
-                                <p>{`https://www.youtube.com/watch?v=${card.videoUrl}`}</p>
-                            </p>
-                            
-                        </div>
-                    </div>
-                ))}
+            {data.map((card, index) => (
+    <div key={index} className="keen-slider__slide number-slide1">
+        <div className="min-w-[300px] bg-white h-[220px] shadow-xl rounded-lg">
+            <iframe
+                width="330"
+                height="150"
+                src={`https://www.youtube.com/embed/${card.videoUrl}`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className='md:w-96 rounded-t-lg'
+            ></iframe>
+            <p className="text-gray-400 text-left tracking-tighter line-clamp-2 text-wrap leading-normal px-4 my-2">
+                {card.title}
+            </p>
+        </div>
+    </div>
+))}
+
             </div>
         </div>
     );
@@ -90,21 +88,3 @@ export default Guru;
 
 
 
-// const guru: GuruItem[] = [
-//     {
-//         video: 'https://www.youtube.com/embed/RSFv-SBl3jc',
-//         subtitle: 'AUM Foundation, the social welfare arm of AUM',
-//     },
-//     {
-//         video: 'https://www.youtube.com/embed/RSFv-SBl3jc',
-//         subtitle: 'AUM Foundation, the social welfare arm of AUM',
-//     },
-//     {
-//         video: 'https://www.youtube.com/embed/RSFv-SBl3jc',
-//         subtitle: 'AUM Foundation, the social welfare arm of AUM',
-//     },
-//     {
-//         video: 'https://www.youtube.com/embed/RSFv-SBl3jc',
-//         subtitle: 'AUM Foundation, the social welfare arm of AUM',
-//     },
-// ];
