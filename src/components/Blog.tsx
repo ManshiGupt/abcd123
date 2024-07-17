@@ -58,7 +58,7 @@ const Blog: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap -m-4">
+        <div className="flex flex-wrap -m-4 shadow-lg">
           {data.map((blog) => (
             <div key={blog.id} className="p-4 md:w-1/3">
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
@@ -71,9 +71,9 @@ const Blog: React.FC = () => {
                     className="object-cover object-center"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 bg-gray-200">
                   <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{blog.category}</h2>
-                  <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{blog.title}</h1>
+                  <h1 className="title-font text-lg font-medium text-gray-950 mb-3">{blog.title}</h1>
                   <div className="flex items-center flex-wrap">
                     {blog.pageUrl ? (
                       <Link href={blog.pageUrl} className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">

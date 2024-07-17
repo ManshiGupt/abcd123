@@ -7,7 +7,7 @@ import { productApi } from '@/api/pandit-api';
 
 
 interface CardProps {
-  imageSrc: string;
+  imageSrc: string[];
   title: string;
   originalPrice: number;
   discountedPrice: number;
@@ -42,11 +42,19 @@ useEffect(() => {
 
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {data.map((card, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden">
-            <Image src={card.imageSrc} alt={card.title} width={500} height={500} className="w-full h-64 object-cover" />
+          <div key={card._id} className="bg-white shadow-md rounded-lg overflow-hidden">
+            
+            {Array.isArray(card.imageSrc) && card.imageSrc.length > 0 ? (
+              <Image src={card.imageSrc[0]} alt={card.title} width={500} height={500} className="w-full h-64 object-cover" />
+            ) : (
+              <img src="/path/to/default/image.jpg" alt={card.title} className="w-full h-64 object-cover" />
+            )}
+
+            {/* <img src={card.imageSrc} alt={card.title} className="w-full h-64 object-cover" /> */}
+            {/* <img src={src.imageUrl} alt={`Slide ${index}`} className="w-full h-[250px] rounded-lg" /> */}
             <div className="p-4">
               <h3 className="text-xl font-semibold">{card.title}</h3>
               <p className="text-gray-500">{card.description}</p>

@@ -56,7 +56,7 @@ const PanditComponent = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-20'>
         {data.map((card) => (
           <div key={card._id} className='min-h-full md:w-72 bg-slate-100 rounded-md shadow-lg'>
             <div className='flex p-2'>

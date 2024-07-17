@@ -138,27 +138,34 @@
 // export default ImageSlider;
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Slide {
   image: string;
   text: string;
   heading: string;
+  url: string,
 }
 
 const slides: Slide[] = [
-  { image: '/thaali.jpg', 
+  { image: '/thaali.jpg',
+    url: "/pooja",
     text: 'The religion of the ancient Indo-European-speaking peoples who entered India about 1500 bce from the region of present-day Iran. It takes its name from the collections of sacred texts known as the Vedas. Vedism is the oldest stratum of religious activity in India for which there exist written materials. ', 
     heading:'Pooja' },
   { image: '/Mantra.jpg', 
+    url: "/pooja",
     text: 'A mantra is a motivating chant, like the “I think I can, I think I can” you repeat over and over to yourself on the last stretch of every marathon you run. A mantra is usually any repeated word or phrase, but it can also refer more specifically to a word repeated in meditation.',
     heading:'Mantra' },
   { image: '/guru.jpg', 
+    url: "/pooja",
     text: 'A mantra is a motivating chant, like the “I think I can, I think I can” you repeat over and over to yourself on the last stretch of every marathon you run. A mantra is usually any repeated word or phrase, but it can also refer more specifically to a word repeated in meditation.'
    ,heading:'Guru Satsang katha'},
   { image: '/thali.jpg', 
+    url: "/Items",
     text: 'Vedic pandit offers a wide range of Pooja/Pujan samagri to make your pooja more auspicious by bringing high quality pujan samagri at your Doorstep.',
     heading:'Pooja smargrih' },
   { image: '/Horoscope.jpg', 
+    url: "/pooja",
     text: 'A panchanga is a Hindu calendar and almanack that uses standard Hindu timekeeping units and displays important dates and calculations in a tabulated format.',
     heading:'Panchang'},
 ];
@@ -179,9 +186,12 @@ const ImageSlider: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleBookNow = () => {
+    window.location.href = slides[currentIndex].url;
+  };
+
   return (
     <div className="relative w-full overflow-hidden pt-20">
-      {/* h-96 md:h-96 lg:h-[36rem] */}
       <div className="relative h-[36rem] md:h-96 lg:h-[36rem] w-full overflow-hidden">
         {slides.map((slide, index) => (
           <div
@@ -199,7 +209,7 @@ const ImageSlider: React.FC = () => {
              <div className='py-4 container md:px-52'> 
               <h1 className="text-3xl md:text-6xl font-bold text-white leading-relaxed mb-3"> {slide.heading}</h1>
               <p className="leading-relaxed text-white mb-3 text-wrap text-left md:pr-60">{slide.text}</p>
-              <button className='bg-black rounded-full border-4 border-gray-700 px-5 shadow-lg shadow-gray-500/50 p-3'>Book now</button>
+              <button className='bg-black rounded-full border-4 border-gray-700 px-5 shadow-lg shadow-gray-500/50 p-3 cursor-pointer' onClick={handleBookNow}>Book now</button>
             </div>
 
             </div>
@@ -221,6 +231,7 @@ const ImageSlider: React.FC = () => {
 };
 
 export default ImageSlider;
+
 // 
 // 
 

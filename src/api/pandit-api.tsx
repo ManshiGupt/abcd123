@@ -115,3 +115,19 @@ export const quotesApi = async () => {
     }
     
 }
+
+const apiUrl8 = "https://vedic-pandit-server.onrender.com/get-all-samagri-category";
+
+export const samagrihCatApi = async () => {
+
+    try {
+        
+        const response = await axios.get(apiUrl8)
+
+        return response.data
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    
+}
