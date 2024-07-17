@@ -50,7 +50,7 @@ const CardContainer: React.FC = () => {
 
   return (
     <div className="card-container-wrapper p-4">
-      <h2 className="text-2xl font-bold mb-6 text-center"></h2>
+      <h2 className="text-2xl font-bold mb-4 text-center"></h2>
       <h1 className="text-3xl md:text-5xl mb-12 tracking-tighter font-medium text-left md:text-center">Upcoming Poojas</h1>
       <div className="card-list flex flex-col lg:flex-row lg:justify-between lg:flex-wrap">
         {cards.map((card, index) => (
