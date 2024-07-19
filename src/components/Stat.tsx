@@ -85,7 +85,7 @@ const Stat = () => {
                 className="object-cover bg-gray-100 rounded-lg shadow-md"
               />
               <div className='text-left md:text-center md:pt-4 md:line-clamp-3'>
-                <h1 className='font-semibold text-4xl'>2500+</h1>
+                <h1 className='font-semibold text-4xl'>250+</h1>
                 <h2 className='font-bold'>Types of Poojas</h2>
                 <p>Pooja performed in Delhi NCR</p>
               </div>

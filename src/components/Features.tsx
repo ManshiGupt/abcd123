@@ -114,15 +114,15 @@ const Features = () => {
                       alt={card.Category}
                       width={100}
                       height={100}
-                      className='rounded-full shadow-lg h-100 w-100'
+                      className='rounded-full shadow-lg h-100 w-100 md:hidden'
                     />
                     
                   </div>
 
                   <div>
                     <h3 className=' font-bold px-4 sm:px-2'>{card.Category}</h3>
-                    <p className="text-gray-500 text-left tracking-tighter line-clamp-2 text-wrap leading-normal px-4 sm:px-2 mb-2">{card.subtitle}</p>
-                    <button className='bg-black text-white md:text-center rounded-md shadow-lg shadow-gray-500/50 px-4 py-2 mt-2 m-4'>Explore</button>
+                    <p className="text-gray-500 text-left tracking-tighter line-clamp-3 text-wrap leading-5 px-4 sm:px-2 mb-2">{card.subtitle}</p>
+                    <button className='bg-black text-white md:text-center rounded-md shadow-lg shadow-gray-500/50 px-4 py-2 mt-1 m-2'>Explore</button>
                   </div>
                   
                 </div>

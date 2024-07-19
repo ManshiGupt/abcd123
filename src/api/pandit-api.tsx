@@ -84,7 +84,7 @@ export const poojaIdApi = async () => {
     
 }
 
-const apiUrl6 = "https://vedic-pandit-server.onrender.com/get-all-poojas";
+const apiUrl6 = "https://vedic-pandit-server.onrender.com/get-blogs";
 
 export const blogApi = async () => {
 
