@@ -56,7 +56,4 @@ export default function Home() {
     </main>
   );
 }
-//sm:p-5 justify-between
-
-//items-center
 

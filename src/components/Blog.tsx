@@ -66,7 +66,6 @@ const Blog: React.FC = () => {
                   <img
                     src={blog.thumbnail}
                     alt={blog.title}
-                    
                     className="object-center object-fill"
                   />
                     <div className="p-6 bg-gray-200 ">

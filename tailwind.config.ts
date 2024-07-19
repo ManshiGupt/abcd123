@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+// import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 const config: Config = {
   content: [
@@ -60,14 +60,14 @@ const config: Config = {
 };
 
 function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
+  // let allColors = flattenColorPalette(theme("colors"));
+  // let newVars = Object.fromEntries(
+  //   Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  // );
 
-  addBase({
-    ":root": newVars,
-  });
+  // addBase({
+  //   ":root": newVars,
+  // });
 }
 
 export default config;
