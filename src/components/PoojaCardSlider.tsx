@@ -47,6 +47,7 @@ const PoojaCardSlider: React.FC = () => {
     };
     fetchData();
   }, []);
+  
 
   return (
     <div className="bg-gray-100 relative">

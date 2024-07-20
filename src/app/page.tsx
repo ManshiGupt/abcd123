@@ -20,6 +20,7 @@ import Guru from "@/components/Guru";
 import Bhakti from "@/components/Bhakti";
 import Samagrih from "@/components/Samagrih";
 import Wisdom from "@/components/Wisdom";
+import Demo from "@/components/Demo";
 
 
 
@@ -38,6 +39,7 @@ export default function Home() {
         {/* <div className="bg-gray-100 flex items-center justify-center pb-8 px-4 md:max-w-full lg:max-w-full">
             <CardContainer />
         </div> */}
+        <Demo/>
         <PoojaCardSlider/>
         <Features/>
         <Blog/>
