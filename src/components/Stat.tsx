@@ -72,10 +72,10 @@ import React from 'react'
 
 const Stat = () => {
   return (
-    <div className='p-4 md:items-center py-8 '>
+    <div className='p-4 md:items-center py-8 pb-10'>
       <div className='px-4 py-10'>
-        <div className='grid grid-cols-1 gap-8 md:grid-cols-3'>
-          <div className='flex flex-col md:flex-col md:items-center md:text-center py-10'>
+        <div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4'>
+          <div className='flex flex-col items-center md:items-center md:text-center py-10'>
             <div className='flex space-x-5 md:flex-col items-center'>
               <Image 
                 src="/stat1.png" // replace with the correct image path
@@ -92,7 +92,7 @@ const Stat = () => {
             </div>
           </div>
 
-          <div className='flex flex-col md:flex-col md:items-center md:text-center py-10'>
+          <div className='flex flex-col items-center md:items-center md:text-center py-10'>
             <div className='flex space-x-5 md:flex-col items-center'>
               <Image 
                 src="/stat2.png" // replace with the correct image path
@@ -109,7 +109,24 @@ const Stat = () => {
             </div>
           </div>
 
-          <div className='flex flex-col md:flex-col md:items-center md:text-center py-10'>
+          <div className='flex flex-col items-center md:items-center md:text-center py-10'>
+            <div className='flex space-x-5 md:flex-col items-center'>
+              <Image 
+                src="/stat2.png" // replace with the correct image path
+                alt="Stat 2"
+                width={100}
+                height={100}
+                className="object-cover bg-gray-100 rounded-lg shadow-md"
+              />
+              <div className='text-left md:text-center md:pt-4 md:line-clamp-3'>
+                <h1 className='font-semibold text-4xl'>2500+</h1>
+                <h2 className='font-bold'>Pandit Onboard</h2>
+                <p>All Types of Pandit across India</p>
+              </div>
+            </div>
+          </div>
+
+          <div className='flex flex-col items-center md:items-center md:text-center py-10'>
             <div className='flex space-x-5 md:flex-col items-center'>
               <Image 
                 src="/stat3.png" // replace with the correct image path
@@ -131,4 +148,5 @@ const Stat = () => {
   )
 }
 
-export default Stat
+export default Stat;
+

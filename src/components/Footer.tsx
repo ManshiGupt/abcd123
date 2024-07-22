@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
             <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Bhajan</h2>
             <nav className="list-none mb-10">
               <li>
-                <Link  href={''} className="text-gray-400 hover:text-white" >Parvhan</Link>
+                <Link  href={''} className="text-gray-400 hover:text-white" >Blog</Link>
               </li>
               <li>
                 <Link href={''} className="text-gray-400 hover:text-white">Sanskar</Link>
@@ -57,10 +57,10 @@ const Footer: React.FC = () => {
                 <Link href={''} className="text-gray-400 hover:text-white">Horoscope</Link>
               </li>
               <li>
-                <Link href={''} className="text-gray-400 hover:text-white">Know you future</Link>
+                <Link href={''} className="text-gray-400 hover:text-white">Bhajan</Link>
               </li>
               <li>
-                <Link href={''} className="text-gray-400 hover:text-white">Lucky day</Link>
+                <Link href={''} className="text-gray-400 hover:text-white">Shorts</Link>
               </li>
               <li>
                 <Link href={''} className="text-gray-400 hover:text-white">Pandit</Link>
@@ -75,13 +75,13 @@ const Footer: React.FC = () => {
               </li> */}
               <Link href={'/Privacy'}>Term & Condition</Link>
               <li>
-                <Link href={''} className="text-gray-400 hover:text-white cursor-pointer">Shipping Policy</Link>
+                <Link href={'/shipping'} className="text-gray-400 hover:text-white cursor-pointer">Shipping Policy</Link>
               </li>
               <li>
-                <Link href={''} className="text-gray-400 hover:text-white cursor-pointer">Refund Policy</Link>
+                <Link href={'/refund'} className="text-gray-400 hover:text-white cursor-pointer">Refund Policy</Link>
               </li>
               <li>
-                <Link href={''} className="text-gray-400 hover:text-white cursor-pointer">Return Policy</Link>
+                <Link href={'/return'} className="text-gray-400 hover:text-white cursor-pointer">Return Policy</Link>
               </li>
             </nav>
           </div>
@@ -89,8 +89,8 @@ const Footer: React.FC = () => {
       </div>
       <div className="bg-gray-800 bg-opacity-75">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-          <p className="text-gray-400 text-sm text-center sm:text-left">© 2024 Vedic-Pandit —
-            <Link href={'https://twitter.com/knyttneve'}  rel="noopener noreferrer" className="text-gray-500 ml-1" target="_blank">@mine_gate_llp</Link>
+          <p className="text-gray-400 text-sm text-center sm:text-left">© 2024 Vedic-Pandit
+            <Link href={'/'}  rel="noopener noreferrer" className="text-gray-500 ml-1" target="_blank"></Link>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
             <Link href={''} className="text-gray-400">

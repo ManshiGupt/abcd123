@@ -131,3 +131,20 @@ export const samagrihCatApi = async () => {
     }
     
 }
+
+
+const apiUrl9 = "https://vedic-pandit-server.onrender.com/get-all-pooja-category";
+
+export const poojaCatApi = async () => {
+
+    try {
+        
+        const response = await axios.get(apiUrl9)
+
+        return response.data
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+    
+}
