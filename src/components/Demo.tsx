@@ -1,7 +1,7 @@
 'use client'
 import { poojaApi } from '@/api/pandit-api';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 interface Demo {
@@ -17,6 +17,7 @@ const Demo: React.FC = () => {
   const [data, setData] = useState<Demo[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,33 +32,39 @@ const Demo: React.FC = () => {
     fetchData();
   }, []);
 
-  const cardsToShow = () => {
-    if (window.innerWidth >= 1024) return 4;
-    if (window.innerWidth >= 768) return 2;
-    return 1;
-  };
+  useEffect(() => {
+    const updateCardsToShow = () => {
+      if (window.innerWidth >= 1024) {
+        setCardsToShow(4);
+      } else if (window.innerWidth >= 768) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(1);
+      }
+    };
+
+    updateCardsToShow();
+    window.addEventListener('resize', updateCardsToShow);
+    return () => window.removeEventListener('resize', updateCardsToShow);
+  }, []);
 
   const nextCard = () => {
     setCurrentIndex((prevIndex) => 
-      Math.min(prevIndex + cardsToShow(), data.length - cardsToShow())
+      Math.min(prevIndex + cardsToShow, data.length - cardsToShow)
     );
   };
 
   const prevCard = () => {
     setCurrentIndex((prevIndex) => 
-      Math.max(prevIndex - cardsToShow(), 0)
+      Math.max(prevIndex - cardsToShow, 0)
     );
   };
 
   return (
     <div className="relative container mx-auto p-4 md:py-32">
       <h2 className="text-gray md:text-5xl text-2xl tracking-tighter font-medium leading-10 px-4">Upcoming Poojas</h2>
-     
       <div className="flex justify-between items-center mb-10 px-4">
-          
-            
             <p className="text-gray-600">To know all about Poojas</p>
-        
           <Link href="/view-all" className="text-black">
             View All &gt;
           </Link>
@@ -65,7 +72,7 @@ const Demo: React.FC = () => {
       <div className="flex space-x-4">
 
         {loading ? (
-          Array.from({ length: cardsToShow() }).map((_, index) => (
+          Array.from({ length: cardsToShow }).map((_, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 relative bg-gray-200 rounded-lg shadow-lg animate-pulse"
@@ -76,14 +83,11 @@ const Demo: React.FC = () => {
                 <div className="h-6 bg-gray-400 rounded mb-2"></div>
                 <div className="h-6 bg-gray-400 rounded mb-2 w-1/2"></div>
                 <div className="h-12 bg-gray-400 rounded mb-2"></div>
-                {/* <div className='absolute left-3 bottom-6 w-1/2'>
-                  <div className="h-10 bg-gray-400 rounded"></div>
-                </div> */}
               </div>
             </div>
           ))
         ) : (
-          data.slice(currentIndex, currentIndex + cardsToShow()).map((card, index) => (
+          data.slice(currentIndex, currentIndex + cardsToShow).map((card) => (
             <div
               key={card._id}
               className="flex-shrink-0 w-full sm:w-1/2 md:w-1/2 lg:w-1/4 relative bg-white rounded-lg shadow-lg"
@@ -129,6 +133,7 @@ const Demo: React.FC = () => {
 };
 
 export default Demo;
+
 
 
 

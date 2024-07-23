@@ -59,7 +59,7 @@ const Shipping = () => {
             Order Tracking
             </h3>
             <hr className='md:p-4 p-2'></hr>
-            <p>Once your order has been shipped, you will receive a shipping confirmation email with a tracking number. You can use this number to track your order through our shipping partner's website.</p>
+            <p>Once your order has been shipped, you will receive a shipping confirmation email with a tracking number. You can use this number to track your order through our shipping partners website.</p>
         </div>
 
         <div className='px-4 md:px-36 md:py-8 py-2'>

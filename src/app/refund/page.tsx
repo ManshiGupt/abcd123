@@ -70,7 +70,7 @@ const Refund = () => {
             <p>We strive to process refunds promptly upon approval. The timeline for receiving your refund may vary:</p>
             <ol className='px-2'>
                 <li>
-                Credit Card: Typically, refunds appear on your statement within [number of days], depending on your card issuer's policies.
+                Credit Card: Typically, refunds appear on your statement within [number of days], depending on your card issuers policies.
                 </li>
                 <li>
                 Bank Transfer: Refunds may take [number of days] to reflect in your account after processing.

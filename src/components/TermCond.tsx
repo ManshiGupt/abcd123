@@ -57,7 +57,7 @@ const TermCond = () => {
             Disclaimer
             </h3>
             <hr className='md:p-4 p-2'></hr>
-            <p>This app is provided "as is," with all faults, and TheVedicPandit.com makes no express or implied representations or warranties.</p>
+            <p>This app is provided as is, with all faults, and TheVedicPandit.com makes no express or implied representations or warranties.</p>
         </div>
 
         <div className='px-4 md:px-36 md:py-8 py-2'>
